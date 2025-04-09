@@ -4,7 +4,6 @@
 #include <vector>
 struct Part{
     int x,y;
-    bool isHead;
 };
 
 
@@ -14,8 +13,6 @@ class Snake{
         Snake(){
             body = std::vector<Part>();
         }
-        
-        
 };
 
 #endif

@@ -14,10 +14,12 @@ class Game{
         Game(){
             grid = std::vector<std::vector<char>>(GRID_WIDTH, std::vector<char>(GRID_HEIGHT, ' '));
         }
-        void start(Snake snake);
+        void start(Snake *snake);
         void display();
+        void update(Snake snake);
     private:
         std::vector<std::vector<char>> grid;
+        void initBorders();
 };
 
 #endif
