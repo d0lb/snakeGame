@@ -40,9 +40,9 @@ bool kbhit()
     return false;
 }
 
-void Snake::move()
+void Snake::move(Game *game)
 {
-    std::vector<Part> tempBody = body;//temporarybodycoords for movement
+    std::vector<Part> tempBody = body;//temporary body coords for movement
     switch (direction) 
     {
         case UP:
@@ -75,19 +75,23 @@ void Snake::move()
         switch (ch) {
             case 'w':
             case 'W':
-                direction = UP;
+                if(direction != DOWN)
+                    direction = UP;
                 break;
             case 's':
             case 'S':
-                direction = DOWN;
+                if(direction != UP)
+                    direction = DOWN;
                 break;
             case 'd':
             case 'D':
-                direction = RIGHT;
+                if(direction != LEFT)
+                    direction = RIGHT;
                 break;
             case 'a':
             case 'A':
-                direction = LEFT;
+                if(direction != RIGHT)
+                    direction = LEFT;
                 break;
             default:
                 break;
