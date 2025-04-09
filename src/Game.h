@@ -25,6 +25,7 @@ class Game{
             grid = std::vector<std::vector<char>>(GRID_WIDTH, std::vector<char>(GRID_HEIGHT, ' '));
             food.x = rand() % (GRID_WIDTH - 5) + 3;
             food.y = rand() % (GRID_HEIGHT - 15) + 2;
+            score = 0;
         }
         void start(Snake *snake);
         void generateFood(Snake snake);
@@ -32,6 +33,7 @@ class Game{
         void update(Snake *snake);
     private:
         void initBorders();
+        int score;
         
 };
 

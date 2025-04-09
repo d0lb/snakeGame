@@ -32,6 +32,7 @@ void clearTerminal()
 void Game::display()
 {
     clearTerminal();
+    std:: cout << "Score: " << score << std::endl;
     initBorders();
     for(int i = 0; i < GRID_WIDTH; i++)
     {
@@ -41,7 +42,6 @@ void Game::display()
         }
         std::cout << '\n';
     }
-    std::cout << "\n " << food.x << " " << food.y << std::endl;
 }
 
 void Game::start(Snake *snake)
@@ -64,6 +64,7 @@ void Game::update(Snake *snake)
     {
         Part newpart = {GRID_WIDTH - 1, GRID_HEIGHT - 1};
         snake->body.push_back(newpart);
+        score++;
         generateFood((*snake));
     }
     for(int i = 0; i < GRID_WIDTH; i++)
